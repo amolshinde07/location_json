@@ -1,309 +1,35 @@
-{
-    "features": [
-        {
-            "geometry": {
-                "coordinates": [
-                    73.712538,
-                    18.597109
-                ],
-                "type": "Point"
-            },
-            "properties": {
-                "address": "Phase 2 Pune",
-                "color": "orange",
-                "meter_number": "MN10001",
-                "status": 2
-            },
-            "type": "Feature"
-        },
-        {
-            "geometry": {
-                "coordinates": [
-                    73.713089,
-                    18.597869
-                ],
-                "type": "Point"
-            },
-            "properties": {
-                "address": "Phase 2 Pune",
-                "color": "blue",
-                "meter_number": "MN10002",
-                "status": 1
-            },
-            "type": "Feature"
-        },
-        {
-            "geometry": {
-                "coordinates": [
-                    73.712614,
-                    18.597563
-                ],
-                "type": "Point"
-            },
-            "properties": {
-                "address": "Phase 2 Pune",
-                "color": "red",
-                "meter_number": "MN10003",
-                "status": 3
-            },
-            "type": "Feature"
-        },
-        {
-            "geometry": {
-                "coordinates": [
-                    73.713612,
-                    18.598435000000002
-                ],
-                "type": "Point"
-            },
-            "properties": {
-                "address": "Phase 2 Pune",
-                "color": "orange",
-                "meter_number": "MN10004",
-                "status": 2
-            },
-            "type": "Feature"
-        },
-        {
-            "geometry": {
-                "coordinates": [
-                    73.71325999999999,
-                    18.598055000000002
-                ],
-                "type": "Point"
-            },
-            "properties": {
-                "address": "Phase 2 Pune",
-                "color": "blue",
-                "meter_number": "MN10005",
-                "status": 1
-            },
-            "type": "Feature"
-        },
-        {
-            "geometry": {
-                "coordinates": [
-                    73.71396499999999,
-                    18.598285
-                ],
-                "type": "Point"
-            },
-            "properties": {
-                "address": "Phase 2 Pune",
-                "color": "orange",
-                "meter_number": "MN10006",
-                "status": 2
-            },
-            "type": "Feature"
-        },
-        {
-            "geometry": {
-                "coordinates": [
-                    73.71309399999998,
-                    18.597619
-                ],
-                "type": "Point"
-            },
-            "properties": {
-                "address": "Phase 2 Pune",
-                "color": "orange",
-                "meter_number": "MN10007",
-                "status": 2
-            },
-            "type": "Feature"
-        },
-        {
-            "geometry": {
-                "coordinates": [
-                    73.71390499999998,
-                    18.598559
-                ],
-                "type": "Point"
-            },
-            "properties": {
-                "address": "Phase 2 Pune",
-                "color": "red",
-                "meter_number": "MN10008",
-                "status": 3
-            },
-            "type": "Feature"
-        },
-        {
-            "geometry": {
-                "coordinates": [
-                    73.71364399999999,
-                    18.598061
-                ],
-                "type": "Point"
-            },
-            "properties": {
-                "address": "Phase 2 Pune",
-                "color": "orange",
-                "meter_number": "MN10009",
-                "status": 2
-            },
-            "type": "Feature"
-        },
-        {
-            "geometry": {
-                "coordinates": [
-                    73.71413199999999,
-                    18.598614
-                ],
-                "type": "Point"
-            },
-            "properties": {
-                "address": "Phase 2 Pune",
-                "color": "orange",
-                "meter_number": "MN10010",
-                "status": 2
-            },
-            "type": "Feature"
-        },
-        {
-            "geometry": {
-                "coordinates": [
-                    73.71378999999999,
-                    18.59822
-                ],
-                "type": "Point"
-            },
-            "properties": {
-                "address": "Phase 2 Pune",
-                "color": "blue",
-                "meter_number": "MN10011",
-                "status": 1
-            },
-            "type": "Feature"
-        },
-        {
-            "geometry": {
-                "coordinates": [
-                    73.71424099999999,
-                    18.598329
-                ],
-                "type": "Point"
-            },
-            "properties": {
-                "address": "Phase 2 Pune",
-                "color": "blue",
-                "meter_number": "MN10012",
-                "status": 1
-            },
-            "type": "Feature"
-        },
-        {
-            "geometry": {
-                "coordinates": [
-                    73.71362699999999,
-                    18.597775
-                ],
-                "type": "Point"
-            },
-            "properties": {
-                "address": "Phase 2 Pune",
-                "color": "orange",
-                "meter_number": "MN10013",
-                "status": 2
-            },
-            "type": "Feature"
-        },
-        {
-            "geometry": {
-                "coordinates": [
-                    73.713985,
-                    18.598440999999998
-                ],
-                "type": "Point"
-            },
-            "properties": {
-                "address": "Phase 2 Pune",
-                "color": "red",
-                "meter_number": "MN10014",
-                "status": 3
-            },
-            "type": "Feature"
-        },
-        {
-            "geometry": {
-                "coordinates": [
-                    73.71309099999999,
-                    18.597665999999997
-                ],
-                "type": "Point"
-            },
-            "properties": {
-                "address": "Phase 2 Pune",
-                "color": "blue",
-                "meter_number": "MN10015",
-                "status": 1
-            },
-            "type": "Feature"
-        },
-        {
-            "geometry": {
-                "coordinates": [
-                    73.71315,
-                    18.597533999999996
-                ],
-                "type": "Point"
-            },
-            "properties": {
-                "address": "Phase 2 Pune",
-                "color": "red",
-                "meter_number": "MN10017",
-                "status": 3
-            },
-            "type": "Feature"
-        },
-        {
-            "geometry": {
-                "coordinates": [
-                    73.71347899999999,
-                    18.598353999999997
-                ],
-                "type": "Point"
-            },
-            "properties": {
-                "address": "Phase 2 Pune",
-                "color": "orange",
-                "meter_number": "MN10018",
-                "status": 2
-            },
-            "type": "Feature"
-        },
-        {
-            "geometry": {
-                "coordinates": [
-                    73.712943,
-                    18.597958
-                ],
-                "type": "Point"
-            },
-            "properties": {
-                "address": "Phase 2 Pune",
-                "color": "blue",
-                "meter_number": "MN10019",
-                "status": 1
-            },
-            "type": "Feature"
-        },
-        {
-            "geometry": {
-                "coordinates": [
-                    73.713595,
-                    18.598479999999995
-                ],
-                "type": "Point"
-            },
-            "properties": {
-                "address": "Phase 2 Pune",
-                "color": "red",
-                "meter_number": "MN10016",
-                "status": 3
-            },
-            "type": "Feature"
+Code:
+
+
+setState(() {
+          var length=0;
+             length=_json["features"].length;
+            print(_json["features"].length);
+
+          for(int i=0;i<length;i++){
+            if(_json["features"][i]["geometry"]["coordinates"][0].toString().length==2){
+              lat[i]=_json["features"][i]["geometry"]["coordinates"][0];
+              long[i]=_json["features"][i]["geometry"]["coordinates"][1];
+              print(lat[i]);
+              print(long[i]);
+              print(lat[i]);
+              mark(lat[i],long[i]);
+            }
+          }
+          print('new res');
+
+//          Navigator.push(context, MaterialPageRoute(builder: (BuildContext context)=>Options()
+//          )
+//          );
         }
-    ],
-    "type": "FeatureCollection"
-}
+        
+        
+        Error Log:
+        
+        
+         A resource failed to call release. 
+I/flutter (31050): {"features":[{"geometry":{"coordinates":[73.712538,18.597109],"type":"Point"},"properties":{"address":"Phase 2 Pune","color":"orange","meter_number":"MN10001","status":2},"type":"Feature"},{"geometry":{"coordinates":[73.713089,18.597869],"type":"Point"},"properties":{"address":"Phase 2 Pune","color":"blue","meter_number":"MN10002","status":1},"type":"Feature"},{"geometry":{"coordinates":[73.712614,18.597563],"type":"Point"},"properties":{"address":"Phase 2 Pune","color":"red","meter_number":"MN10003","status":3},"type":"Feature"},{"geometry":{"coordinates":[73.713612,18.598435000000002],"type":"Point"},"properties":{"address":"Phase 2 Pune","color":"orange","meter_number":"MN10004","status":2},"type":"Feature"},{"geometry":{"coordinates":[73.71325999999999,18.598055000000002],"type":"Point"},"properties":{"address":"Phase 2 Pune","color":"blue","meter_number":"MN10005","status":1},"type":"Feature"},{"geometry":{"coordinates":[73.71396499999999,18.598285],"type":"Point"},"properties":{"address":"Phase 2 Pune"
+I/flutter (31050): lineeeeeee
+I/flutter (31050): 19
+I/flutter (31050): new res
+I/com.ayn.meter(31050): Background concurrent copying GC freed 254427(11MB) AllocSpace objects, 0(0B) LOS objects, 50% free, 11MB/22MB, paused 557us total 106.531ms
