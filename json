@@ -1,20 +1,122 @@
-Code:
+import 'dart:convert';
+
+import 'package:flutter/material.dart';
+import 'package:geolocator/geolocator.dart';
+import 'package:http/http.dart' as http;
+import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:webview_flutter/webview_flutter.dart';
+class Maps extends StatefulWidget {
+  @override
+  _MapsState createState() => _MapsState();
+}
+
+class _MapsState extends State<Maps> {
+
+  List<Marker> allMarkers=[];
+  String token="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1ODc0ODUzMTYsIm5iZiI6MTU4NzQ4NTMxNiwianRpIjoiMDE0NzljOWItNzBhMC00ZWM5LTlkNDYtMDg2MTlmNGYxYTk2IiwiaWRlbnRpdHkiOiJhbW9sMjAyMCIsImZyZXNoIjpmYWxzZSwidHlwZSI6ImFjY2VzcyIsInVzZXJfY2xhaW1zIjpbInJlYWRlciJdfQ.VGYp7MebuURTRgMAhInKDdi9tB5lODth35rayvdmmek";
+  List lat;
+  List lng;
+  List color;
 
 
-setState(() {
+  var gcity=null;
+  final Geolocator geolocator = Geolocator()..forceAndroidLocationManager;
+  Future<Null> _getLocation() async {
+    var currentLocation = await Geolocator()
+        .getCurrentPosition(desiredAccuracy: LocationAccuracy.best);
+
+    setState(() {
+      gcity=currentLocation;
+//      print(gcity);
+//      _getAddressFromLatLng();
+    });
+  }
+
+  Future<String> meters() async {
+
+    var url = "https://meterreader.ml/reader/all_meters/";
+    var body = json.encode({
+
+//      "username": username,
+//      "password": pass
+
+
+    }
+
+    );
+    Map<String,String> headers = {
+      'Content-type' : 'application/json',
+      'Authorization': 'Bearer $token',
+    };
+
+    try {
+      print('afk');
+      final response = await http.post(url,headers:headers);
+      print(response.body);
+      var _json = json.decode(response.body);
+      print('lineeeeeee');
+
+
+
+      if(response.statusCode==200)
+      {
+        setState(() {
           var length=0;
              length=_json["features"].length;
             print(_json["features"].length);
 
+          BitmapDescriptor icon;
+          lng = new List(length);
+          lat = new List(length);
+          color = new List(length);
           for(int i=0;i<length;i++){
-            if(_json["features"][i]["geometry"]["coordinates"][0].toString().length==2){
-              lat[i]=_json["features"][i]["geometry"]["coordinates"][0];
-              long[i]=_json["features"][i]["geometry"]["coordinates"][1];
-              print(lat[i]);
-              print(long[i]);
-              print(lat[i]);
-              mark(lat[i],long[i]);
-            }
+            print('for loop');
+//            if(_json["features"][i]["geometry"]["coordinates"].length==2){
+              lng[i]=_json["features"][i]["geometry"]["coordinates"][0];
+              lat[i]=_json["features"][i]["geometry"]["coordinates"][1];
+              color[i]=_json["features"][i]["properties"]["status"];
+
+              print(color[i]);
+              print(lng[i]);
+            BitmapDescriptor.fromAssetImage(
+                ImageConfiguration(size: Size(48, 48)), 'images/blue-dot.png')
+                .then((onValue) {
+              icon = onValue;
+            });
+//            if (color[i] == 1){
+//              BitmapDescriptor.fromAssetImage(
+//                  ImageConfiguration(size: Size(48, 48)), 'images/blue-dot.png')
+//                  .then((onValue) {
+//                icon = onValue;
+//              });
+//            } else if (color[i]==2){
+//              BitmapDescriptor.fromAssetImage(
+//                  ImageConfiguration(size: Size(48, 48)), 'images/orange-dot.png')
+//                  .then((onValue) {
+//                icon = onValue;
+//              });
+//            } else if (color [i]== 3){
+//              BitmapDescriptor.fromAssetImage(
+//                  ImageConfiguration(size: Size(48, 48)), 'images/orange-dot.png')
+//                  .then((onValue) {
+//                icon = onValue;
+//              });
+//            }
+            allMarkers.add(
+
+                Marker(
+                  markerId: MarkerId(i.toString()),
+                  draggable:false,
+                  icon:icon,
+                  onTap: (){
+                    print(lat[i]);
+                    print(lng[i]);
+                  },
+                  position: LatLng(lat[i].toDouble(),lng[i].toDouble()),
+                )
+            );
+              //mark(lng[i].toDouble(),lat[i].toDouble(),length);
+
           }
           print('new res');
 
@@ -22,14 +124,51 @@ setState(() {
 //          )
 //          );
         }
-        
-        
-        Error Log:
-        
-        
-         A resource failed to call release. 
-I/flutter (31050): {"features":[{"geometry":{"coordinates":[73.712538,18.597109],"type":"Point"},"properties":{"address":"Phase 2 Pune","color":"orange","meter_number":"MN10001","status":2},"type":"Feature"},{"geometry":{"coordinates":[73.713089,18.597869],"type":"Point"},"properties":{"address":"Phase 2 Pune","color":"blue","meter_number":"MN10002","status":1},"type":"Feature"},{"geometry":{"coordinates":[73.712614,18.597563],"type":"Point"},"properties":{"address":"Phase 2 Pune","color":"red","meter_number":"MN10003","status":3},"type":"Feature"},{"geometry":{"coordinates":[73.713612,18.598435000000002],"type":"Point"},"properties":{"address":"Phase 2 Pune","color":"orange","meter_number":"MN10004","status":2},"type":"Feature"},{"geometry":{"coordinates":[73.71325999999999,18.598055000000002],"type":"Point"},"properties":{"address":"Phase 2 Pune","color":"blue","meter_number":"MN10005","status":1},"type":"Feature"},{"geometry":{"coordinates":[73.71396499999999,18.598285],"type":"Point"},"properties":{"address":"Phase 2 Pune"
-I/flutter (31050): lineeeeeee
-I/flutter (31050): 19
-I/flutter (31050): new res
-I/com.ayn.meter(31050): Background concurrent copying GC freed 254427(11MB) AllocSpace objects, 0(0B) LOS objects, 50% free, 11MB/22MB, paused 557us total 106.531ms
+        );
+      }
+    }
+    catch (e){
+      print(e);
+      //return poa_Execute(status: 500, message: "Oops! Something went wrong");
+    }
+  }
+//  Future<String> mark(double lat,double lng,var length) async {
+////    await complete();
+//    //await meters();
+//
+//
+//    for(int i=0;i<length;i++){
+//      print('for loop 2');
+//      await
+//
+//
+//    }
+//
+//  }
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    _getLocation();
+    meters();
+    //mark(lat,long,);
+
+  }
+
+  @override
+  Widget build(BuildContext context) {
+
+    return Container(
+      height: MediaQuery.of(context).size.width,
+      width: MediaQuery.of(context).size.width,
+      child: GoogleMap(
+        initialCameraPosition: CameraPosition(
+            target: LatLng(gcity.latitude,gcity.longitude),
+            zoom: 20.0
+        ),
+        markers: Set.from(allMarkers),
+      ),
+    );
+  }
+}
